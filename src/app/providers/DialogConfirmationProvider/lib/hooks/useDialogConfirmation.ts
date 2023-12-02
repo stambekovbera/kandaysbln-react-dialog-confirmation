@@ -15,7 +15,7 @@ type IUseDialogConfirmationResult = Required<Pick<IDialogConfirmationContext, 'o
 
 type HookResult<T extends boolean> = T extends true ? IUseDialogConfirmationResultForDialog : IUseDialogConfirmationResult;
 
-export const useDialogConfirmation = <B extends boolean>(forDialogConfirmation: B): HookResult<B> => {
+export const useDialogConfirmation = <B extends boolean>(forDialogConfirmation?: B): HookResult<B> => {
     const {
         params,
 
