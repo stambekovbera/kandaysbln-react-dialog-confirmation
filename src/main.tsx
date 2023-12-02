@@ -1,9 +1,22 @@
-import ReactDOM from 'react-dom/client';
-import { DialogConfirmationProvider } from '@/app/providers/DialogConfirmationProvider';
-import { App } from './app/App';
+import {
+    DialogConfirmationContext,
+    DialogConfirmationProvider,
+    IDialogConfirmationContext,
+    IDialogConfirmationOnOpenProps,
+    IDialogConfirmationProps,
+    useDialogConfirmation
+} from './app/providers/DialogConfirmationProvider';
+import { DialogConfirmationModal } from './widgets/DialogConfirmationModal';
 
-ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
-    <DialogConfirmationProvider>
-        <App/>
-    </DialogConfirmationProvider>
-);
+export {
+    DialogConfirmationContext,
+    DialogConfirmationProvider,
+    useDialogConfirmation,
+    DialogConfirmationModal,
+};
+
+export type {
+    IDialogConfirmationProps,
+    IDialogConfirmationContext,
+    IDialogConfirmationOnOpenProps
+};

@@ -15,7 +15,8 @@ export default defineConfig( {
         minify: true,
         outDir: 'dist',
         rollupOptions: {
-            external: [ 'react', 'react-dom' ],
+            external: [ 'react', 'react-dom', '@emotion/react', '@emotion/styled', '@mui/material' ],
+            input: { app: path.resolve( __dirname, 'src/main.tsx' ) }
         },
     },
     css: {
