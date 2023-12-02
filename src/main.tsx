@@ -1,9 +1,6 @@
 import {
     DialogConfirmationContext,
     DialogConfirmationProvider,
-    IDialogConfirmationContext,
-    IDialogConfirmationOnOpenProps,
-    IDialogConfirmationProps,
     useDialogConfirmation
 } from './app/providers/DialogConfirmationProvider';
 import { DialogConfirmationModal } from './widgets/DialogConfirmationModal';
@@ -13,10 +10,4 @@ export {
     DialogConfirmationProvider,
     useDialogConfirmation,
     DialogConfirmationModal,
-};
-
-export type {
-    IDialogConfirmationProps,
-    IDialogConfirmationContext,
-    IDialogConfirmationOnOpenProps
 };
