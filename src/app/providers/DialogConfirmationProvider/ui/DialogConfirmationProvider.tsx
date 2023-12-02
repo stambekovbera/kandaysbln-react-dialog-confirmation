@@ -4,7 +4,7 @@ import {
     IDialogConfirmationContext,
     IDialogConfirmationOnOpenProps,
     IDialogConfirmationProps
-} from '../lib/DialogConfirmationContext.ts';
+} from '../lib/DialogConfirmationContext';
 
 interface IDialogConfirmationProviderProps {
     children: React.ReactNode;

@@ -3,8 +3,8 @@ import {
     IDialogConfirmationContext,
     IDialogConfirmationOnOpenProps,
     IDialogConfirmationProps
-} from '../DialogConfirmationContext.ts';
-import { functionCallErrorHandler } from '@/shared/lib/errorHandlers/errorsHandlers.ts';
+} from '../DialogConfirmationContext';
+import { functionCallErrorHandler } from '@/shared/lib/errorHandlers/errorsHandlers';
 import { useContext } from 'react';
 
 type IUseDialogConfirmationResultForDialog =

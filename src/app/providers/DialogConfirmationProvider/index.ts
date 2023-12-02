@@ -1,15 +1,15 @@
 export {
     DialogConfirmationProvider
-} from './ui/DialogConfirmationProvider.tsx';
+} from './ui/DialogConfirmationProvider';
 
 export {
     useDialogConfirmation
-} from './lib/hooks/useDialogConfirmation.ts';
+} from './lib/hooks/useDialogConfirmation';
 
 export type {
     IDialogConfirmationContext,
     IDialogConfirmationProps,
     IDialogConfirmationOnOpenProps
-} from './lib/DialogConfirmationContext.ts';
+} from './lib/DialogConfirmationContext';
 
-export { DialogConfirmationContext } from './lib/DialogConfirmationContext.ts';
+export { DialogConfirmationContext } from './lib/DialogConfirmationContext';
