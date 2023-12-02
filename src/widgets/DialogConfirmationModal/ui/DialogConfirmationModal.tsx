@@ -1,4 +1,3 @@
-import classes from './DialogConfirmationModal.module.scss';
 import cn from 'classnames';
 import React from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
@@ -49,7 +48,7 @@ const DialogConfirmationModalComponent: React.FC<IDialogConfirmationModalProps> 
             fullWidth
             maxWidth='sm'
             open={ isOpen }
-            className={ cn( classes.modal, {}, [ className ] ) }
+            className={ cn( '', {}, [ className ] ) }
         >
             <DialogTitle>
                 { title }
