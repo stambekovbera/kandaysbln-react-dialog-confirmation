@@ -1,8 +1,36 @@
 {
   "name": "kandaysbln-react-dialog-confirmation",
-  "private": false,
+  "description": "A lightweight React library that adds Dialog Confirmation functionality.",
   "version": "0.0.0",
+  "author": {
+    "email": "stambekovbera@gmail.com",
+    "name": "Stambekov Berador"
+  },
+  "private": false,
   "type": "module",
+  "keywords": [
+    "react",
+    "reactjs",
+    "react-dialog",
+    "react-dialog-confirmation",
+    "react-dialog-confirm",
+    "react-confirm",
+    "confirm",
+    "dialog-confirm",
+    "react-confirm-alert",
+    "react-typescript",
+    "react-ts"
+  ],
+  "homepage": "https://github.com/stambekovbera/kandaysbln-react-dialog-confirmation",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stambekovbera/kandaysbln-react-dialog-confirmation"
+  },
+  "bugs": {
+    "email": "stambekovbera@gmail.com",
+    "url": "https://github.com/stambekovbera/kandaysbln-react-dialog-confirmation/issues"
+  },
+  "license": "MIT",
   "files": [
     "dist"
   ],
