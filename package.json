@@ -70,6 +70,7 @@
     "vite-plugin-dts": "^3.6.4"
   },
   "peerDependencies": {
-    "react": "*"
+    "react": "*",
+    "react-dom": "*"
   }
 }
