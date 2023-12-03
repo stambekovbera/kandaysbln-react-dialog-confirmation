@@ -20,27 +20,34 @@ export const Modal: React.FC<IModalProps> = (props) => {
         onClose,
     } = props;
 
-    const [ isClosing, setIsClosing ] = React.useState( false );
-    const [ isOpening, setIsOpening ] = React.useState( false );
-    const [ isMounted, setIsMounted ] = React.useState( false );
+    const [ isClosing, setIsClosing ] = React.useState(false);
+    const [ isOpening, setIsOpening ] = React.useState(false);
+    const [ isMounted, setIsMounted ] = React.useState(false);
     const timeoutRef = React.useRef<ReturnType<typeof setTimeout>>();
 
-    const closeHandler = React.useCallback( () => {
-        if (onClose) {
-            setIsClosing( true );
-            timeoutRef.current = setTimeout( () => {
-                onClose();
-                setIsOpening( false );
-                setIsClosing( false );
-            }, ANIMATION_DELAY );
-        }
-    }, [ onClose ] );
+    const closeHandler = React.useCallback((callback?: () => void) => {
+        setIsClosing(true);
+        timeoutRef.current = setTimeout(() => {
+            if (callback) {
+                callback();
+            }
+            setIsOpening(false);
+            setIsClosing(false);
+            setIsMounted(false);
+        }, ANIMATION_DELAY);
+    }, []);
 
-    const onKeyDown = React.useCallback( (e: KeyboardEvent) => {
+    const closeHandlerWithOnClose = React.useCallback(() => {
+        if (onClose) {
+            closeHandler(onClose);
+        }
+    }, [ closeHandler, onClose ]);
+
+    const onKeyDown = React.useCallback((e: KeyboardEvent) => {
         if (e.key === 'Escape') {
             closeHandler();
         }
-    }, [ closeHandler ] );
+    }, [ closeHandler ]);
 
     const onContentClick = (e: React.MouseEvent) => {
         e.stopPropagation();
@@ -51,41 +58,42 @@ export const Modal: React.FC<IModalProps> = (props) => {
         [classes.closing]: isClosing,
     };
 
-    React.useEffect( () => {
+    React.useEffect(() => {
         if (isOpen) {
-            setIsMounted( true );
-
-            return;
+            if (onClose) {
+                window.addEventListener('keydown', onKeyDown);
+            }
+            setIsMounted(true);
         }
 
-        setIsMounted( false );
-    }, [ isOpen ] );
-
-    React.useEffect( () => {
-        if (isOpen) {
-            window.addEventListener( 'keydown', onKeyDown );
+        if (!isOpen && !onClose) {
+            closeHandler();
         }
 
         return () => {
-            window.removeEventListener( 'keydown', onKeyDown );
-            clearTimeout( timeoutRef.current );
+            if (onClose) {
+                window.removeEventListener('keydown', onKeyDown);
+            }
+            
+            clearTimeout(timeoutRef.current);
         };
-    }, [ isOpen, onKeyDown ] );
+    }, [ closeHandler, closeHandlerWithOnClose, isOpen, onClose, onKeyDown ]);
 
-    React.useEffect( () => {
+    React.useEffect(() => {
         let timeout: ReturnType<typeof setTimeout> | null = null;
+
         if (isMounted) {
-            timeout = setTimeout( () => {
-                setIsOpening( true );
-            }, 200 );
+            timeout = setTimeout(() => {
+                setIsOpening(true);
+            }, ANIMATION_DELAY);
         }
 
         return () => {
             if (timeout) {
-                clearTimeout( timeout );
+                clearTimeout(timeout);
             }
         };
-    }, [ isMounted ] );
+    }, [ isMounted ]);
 
     if (!isMounted) {
         return null;
@@ -93,10 +101,10 @@ export const Modal: React.FC<IModalProps> = (props) => {
 
     return (
         <Portal>
-            <div className={ cn( classes.modal, mods, [ className ] ) }>
+            <div className={ cn(classes.modal, mods, [ className ]) }>
                 <div
                     className={ classes.modalOverlay }
-                    onClick={ closeHandler }
+                    onClick={ closeHandlerWithOnClose }
                 >
                     <div
                         className={ classes.modalContent }

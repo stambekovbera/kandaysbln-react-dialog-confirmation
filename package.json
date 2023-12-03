@@ -32,7 +32,8 @@
   },
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "dist/kandaysbln-react-dialog-confirmation.css"
   ],
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",

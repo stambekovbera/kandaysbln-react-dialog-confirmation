@@ -25,6 +25,11 @@ export default defineConfig({
                     react: 'React',
                     'react-dom': 'ReactDom',
                 },
+                assetFileNames: (assetInfo) => {
+                    if (assetInfo.name == 'style.css')
+                        return 'kandaysbln-react-dialog-confirmation.css';
+                    return assetInfo.name;
+                },
             },
         },
         lib: {
@@ -34,6 +39,9 @@ export default defineConfig({
         },
     },
     css: {
+        postcss: {
+            to: 'kandaysbln-react-dialog-confirmation.css',
+        },
         modules: {
             localsConvention: 'camelCaseOnly',
         }
