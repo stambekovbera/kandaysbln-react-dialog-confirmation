@@ -1,6 +1,6 @@
 import cn from 'classnames';
 import React from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import { Modal } from '@/shared/ui/Modal/Modal.tsx';
 import { useDialogConfirmation } from '@/app/providers/DialogConfirmationProvider';
 
 interface IDialogConfirmationModalProps {
@@ -44,35 +44,27 @@ const DialogConfirmationModalComponent: React.FC<IDialogConfirmationModalProps> 
     }, [ acceptEvent, onClose ] );
 
     return (
-        <Dialog
-            fullWidth
-            maxWidth='sm'
-            open={ isOpen }
+        <Modal
+            isOpen={ isOpen }
             className={ cn( '', {}, [ className ] ) }
         >
-            <DialogTitle>
-                { title }
-            </DialogTitle>
-            <DialogContent>
-                <DialogContentText>
-                    { description }
-                </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-                <Button
-                    variant='outlined'
+            <p>{ title }</p>
+            <p>
+                { description }
+            </p>
+            <div>
+                <button
                     onClick={ handleCloseEvent }
                 >
                     { cancelButtonText }
-                </Button>
-                <Button
-                    variant='contained'
+                </button>
+                <button
                     onClick={ handleAcceptEvent }
                 >
                     { acceptButtonText }
-                </Button>
-            </DialogActions>
-        </Dialog>
+                </button>
+            </div>
+        </Modal>
     );
 };
 

@@ -18,15 +18,11 @@ export default defineConfig( {
         minify: true,
         outDir: 'dist',
         rollupOptions: {
-            external: [ 'react', 'react-dom', '@emotion/react', '@emotion/styled', '@mui/material' ],
+            external: [ 'react' ],
             input: { app: path.resolve( __dirname, 'src/main.tsx' ) },
             output: {
                 globals: {
                     react: 'React',
-                    'react-dom': 'React-Dom',
-                    '@emotion/react': '@Emotion/react',
-                    '@emotion/styled': '@Emotion/styled',
-                    '@mui/material': '@Mui/material',
                 },
             },
         },
