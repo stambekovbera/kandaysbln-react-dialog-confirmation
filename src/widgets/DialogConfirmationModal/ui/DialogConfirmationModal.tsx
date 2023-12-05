@@ -1,6 +1,7 @@
+import classes from './DialogConfirmationModal.module.scss';
 import cn from 'classnames';
 import React from 'react';
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
+import { Modal } from '@/shared/ui/Modal/Modal.tsx';
 import { useDialogConfirmation } from '@/app/providers/DialogConfirmationProvider';
 
 interface IDialogConfirmationModalProps {
@@ -21,59 +22,57 @@ const DialogConfirmationModalComponent: React.FC<IDialogConfirmationModalProps> 
         description,
         title,
         onCloseDialogConfirmation,
-    } = useDialogConfirmation( true );
+    } = useDialogConfirmation(true);
 
-    const onClose = React.useCallback( () => {
+    const onClose = React.useCallback(() => {
         onCloseDialogConfirmation();
-    }, [ onCloseDialogConfirmation ] );
+    }, [ onCloseDialogConfirmation ]);
 
-    const handleCloseEvent = React.useCallback( () => {
+    const handleCloseEvent = React.useCallback(() => {
         if (cancelEvent) {
             cancelEvent();
         }
 
         onClose();
-    }, [ cancelEvent, onClose ] );
+    }, [ cancelEvent, onClose ]);
 
-    const handleAcceptEvent = React.useCallback( () => {
+    const handleAcceptEvent = React.useCallback(() => {
         if (acceptEvent) {
             acceptEvent();
         }
 
         onClose();
-    }, [ acceptEvent, onClose ] );
+    }, [ acceptEvent, onClose ]);
 
     return (
-        <Dialog
-            fullWidth
-            maxWidth='sm'
-            open={ isOpen }
-            className={ cn( '', {}, [ className ] ) }
+        <Modal
+            isOpen={ isOpen }
+            className={ cn('', {}, [ className ]) }
         >
-            <DialogTitle>
-                { title }
-            </DialogTitle>
-            <DialogContent>
-                <DialogContentText>
-                    { description }
-                </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-                <Button
-                    variant='outlined'
-                    onClick={ handleCloseEvent }
-                >
-                    { cancelButtonText }
-                </Button>
-                <Button
-                    variant='contained'
-                    onClick={ handleAcceptEvent }
-                >
-                    { acceptButtonText }
-                </Button>
-            </DialogActions>
-        </Dialog>
+            <div className={ classes.confirmWrapper }>
+                <div className={ classes.confirmInfo }>
+                    <p className={ classes.confirmTitle }>{ title }</p>
+                    <p className={ classes.confirmDescription }>
+                        { description }
+                    </p>
+                </div>
+                <div className={ classes.confirmActions }>
+                    <button
+                        className={ classes.confirmButton }
+                        onClick={ handleCloseEvent }
+                    >
+                        { cancelButtonText }
+                    </button>
+                    <button
+                        className={ classes.confirmButton }
+                        onClick={ handleAcceptEvent }
+                    >
+                        { acceptButtonText }
+                    </button>
+                </div>
+            </div>
+        </Modal>
     );
 };
 
-export const DialogConfirmationModal = React.memo( DialogConfirmationModalComponent );
+export const DialogConfirmationModal = React.memo(DialogConfirmationModalComponent);

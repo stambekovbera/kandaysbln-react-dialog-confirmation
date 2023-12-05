@@ -1,7 +1,7 @@
 {
   "name": "kandaysbln-react-dialog-confirmation",
   "description": "A lightweight React library that adds Dialog Confirmation functionality.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": {
     "email": "stambekovbera@gmail.com",
     "name": "Stambekov Berador"
@@ -32,7 +32,8 @@
   },
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "dist/kandaysbln-react-dialog-confirmation.css"
   ],
   "main": "./dist/index.umd.cjs",
   "module": "./dist/index.js",
@@ -50,9 +51,6 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix"
   },
   "devDependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.19",
     "@types/node": "^20.10.2",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
@@ -67,14 +65,12 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "sass": "^1.69.5",
     "typescript": "^5.2.2",
     "vite": "^5.0.0",
     "vite-plugin-dts": "^3.6.4"
   },
   "peerDependencies": {
-    "@emotion/react": "*",
-    "@emotion/styled": "*",
-    "@mui/material": "*",
     "react": "*",
     "react-dom": "*"
   }
