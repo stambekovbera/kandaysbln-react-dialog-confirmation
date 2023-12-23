@@ -4,12 +4,12 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
-export default defineConfig({
-    plugins: [ react(), dtsPlugin({
+export default defineConfig( {
+    plugins: [ react(), dtsPlugin( {
         insertTypesEntry: true,
-    }) ],
+    } ) ],
     resolve: {
-        alias: [ { find: '@', replacement: path.resolve(__dirname, 'src') } ],
+        alias: [ { find: '@', replacement: path.resolve( __dirname, 'src' ) } ],
     },
     server: {
         port: 3000,
@@ -19,7 +19,7 @@ export default defineConfig({
         outDir: 'dist',
         rollupOptions: {
             external: [ 'react', 'react-dom' ],
-            input: { app: path.resolve(__dirname, 'src/main.tsx') },
+            input: { app: path.resolve( __dirname, 'src/main.tsx' ) },
             output: {
                 globals: {
                     react: 'React',
@@ -33,9 +33,10 @@ export default defineConfig({
             },
         },
         lib: {
-            entry: path.resolve(__dirname, 'src/main.tsx'),
+            entry: path.resolve( __dirname, 'src/main.tsx' ),
             name: 'KandaysblnDialogConfirmation',
             fileName: 'index',
+            formats: [ 'es' ],
         },
     },
     css: {
@@ -46,4 +47,4 @@ export default defineConfig({
             localsConvention: 'camelCaseOnly',
         }
     },
-});
+} );
