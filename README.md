@@ -41,11 +41,14 @@ ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
 
 ### 1. Importing the component from the package
 
+Import components from a package, and also import styles
+
 ```tsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import { DialogConfirmationProvider, DialogConfirmationModal } from 'kandaysbln-react-dialog-confirmation';
+import 'kandaysbln-react-dialog-confirmation/kandaysbln-react-dialog-confirmation.css'
 
 ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
     <React.StrictMode>
@@ -55,7 +58,6 @@ ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
         </DialogConfirmationProvider>
     </React.StrictMode>,
 );
-
 ```
 
 ### 2. Creating your custom component and importing it
