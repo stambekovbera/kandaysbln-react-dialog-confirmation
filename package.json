@@ -1,7 +1,7 @@
 {
   "name": "kandaysbln-react-dialog-confirmation",
   "description": "A lightweight React library that adds Dialog Confirmation functionality.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": {
     "email": "stambekovbera@gmail.com",
     "name": "Stambekov Berador"
@@ -33,14 +33,15 @@
   "license": "MIT",
   "files": [
     "dist",
-    "dist/*.css"
+    "dist/*.css",
+    "dist/index.d.ts"
   ],
-  "main": "./dist/index.umd.cjs",
-  "module": "./dist/index.js",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.js",
-      "require": "./dist/index.umd.cjs"
+      "require": "./dist/index.js"
     },
     "./*.css": {
       "import": "./dist/*.css",
