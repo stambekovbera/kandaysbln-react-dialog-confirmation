@@ -1,6 +1,4 @@
-## [Документация на русском](https://github.com/stambekovbera/kandaysbln-react-dialog-confirmation/tree/new-readme/documentation/ru)
-
-# Installation
+# Установка
 
 ## NPM
 
@@ -16,11 +14,11 @@ yarn add kandaysbln-react-dialog-confirmation
 
 ------------
 
-## Connecting the provider
+## Подключение провайдера
 
-### 1. Install the package using NPM or YARN as shown above
+### 1. Установите пакет с помощью NPM или YARN, как показано выше.
 
-### 2. Import the provider and wrap your application with it
+### 2. Импортируйте провайдер и оберните им приложение
 
 ```tsx
 import React from 'react'
@@ -37,9 +35,9 @@ ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
 );
 ```
 
-## Connecting the Dialog Component
+## Подключение компонента диалогового окна
 
-### 1. Importing the component from the package
+### 1. Импортирование компонента из пакета
 
 ```tsx
 import React from 'react'
@@ -58,11 +56,11 @@ ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
 
 ```
 
-### 2. Creating your custom component and importing it
+### 2. Создание собственного компонента и его последующий импорт
 
-To develop your own component, you need to import the **useDialogConfirmation** hook. When using this hook, pass **true
-** as an
-argument if it's used in a component that will be used as a confirmation dialog. In other contexts, pass **false**.
+Для разработки собственного компонента необходимо выполнить импорт хука useDialogConfirmation. При вызове данного хука
+необходимо передать аргументом значение true, если он применяется в компоненте, который будет использоваться как
+подтверждающее диалоговое окно. В случае использования хука в других контекстах следует передавать значение false.
 
 ```tsx
 import React from 'react';
@@ -136,7 +134,7 @@ const CustomDialogConfirmation: React.FC = () => {
 export default CustomDialogConfirmation;
 ```
 
-Import the created component
+Импорт созданного выше компонента
 
 ```tsx
 import React from 'react'
@@ -155,12 +153,11 @@ ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
 );
 ```
 
-## Example of Usage
+## Пример использования
 
-To use the confirmation functionality, import the **useDialogConfirmation** hook. When calling this hook, pass **false**
-as an
-argument. This component will return the **onOpenDialogConfirmation** method, which should be used in functions where
-confirmation of an action is required
+Для использования функционала подтверждения необходимо импортировать хук useDialogConfirmation. При вызове данного
+хука передайте аргументом значение false. Этот компонент вернет метод onOpenDialogConfirmation, который следует
+применять в функциях, где требуется подтверждение действия.
 
 ```tsx
 import { useDialogConfirmation } from 'kandaysbln-react-dialog-confirmation';
@@ -173,14 +170,14 @@ function App() {
     const showDialogConfirmation = (isConfirm = false) => {
         if (!isConfirm) {
             onOpenDialogConfirmation( {
-                title: 'Action confirmation',
-                acceptEvent: showDialogConfirmation.bind( null, true ) // first argument context is null, second argument isConfirm is true
+                title: 'Подтверждение действия',
+                acceptEvent: showDialogConfirmation.bind( null, true ) // первый аргумент контекст - null, второй аргумент isConfirm - true
             } );
 
             return;
         }
 
-        alert( 'Action confirmed!' );
+        alert( 'Действие было подтверждено!' );
 
         return;
     };
