@@ -1,4 +1,4 @@
-## [Документация на русском](https://github.com/stambekovbera/kandaysbln-react-dialog-confirmation/tree/new-readme/documentation/ru)
+## [Документация на русском](https://github.com/stambekovbera/kandaysbln-react-dialog-confirmation/tree/master/documentation/ru)
 
 # Installation
 
@@ -62,9 +62,10 @@ ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
 
 ### 2. Creating your custom component and importing it
 
-To develop your own component, you need to import the **useDialogConfirmation** hook. When using this hook, pass **true
-** as an
-argument if it's used in a component that will be used as a confirmation dialog. In other contexts, pass **false**.
+To develop your own component, you need to import the **useDialogConfirmation** hook. When using this hook,
+pass **true**
+as an argument if it's used in a component that will be used as a confirmation dialog. In other contexts,
+pass **false**.
 
 ```tsx
 import React from 'react';
@@ -160,8 +161,8 @@ ReactDOM.createRoot( document.getElementById( 'root' )! ).render(
 ## Example of Usage
 
 To use the confirmation functionality, import the **useDialogConfirmation** hook. When calling this hook, pass **false**
-as an
-argument. This component will return the **onOpenDialogConfirmation** method, which should be used in functions where
+as an argument. This component will return the **onOpenDialogConfirmation** method, which should be used in functions
+where
 confirmation of an action is required
 
 ```tsx
