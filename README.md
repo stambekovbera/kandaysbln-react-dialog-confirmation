@@ -173,14 +173,14 @@ function App() {
     const showDialogConfirmation = (isConfirm = false) => {
         if (!isConfirm) {
             onOpenDialogConfirmation( {
-                title: 'Подтверждение действия',
-                acceptEvent: showDialogConfirmation.bind( null, true ) // первый аргумент контекст - null, второй аргумент isConfirm - true
+                title: 'Action confirmation',
+                acceptEvent: showDialogConfirmation.bind( null, true ) // first argument context is null, second argument isConfirm is true
             } );
 
             return;
         }
 
-        alert( 'Действие было подтверждено!' );
+        alert( 'Action confirmed!' );
 
         return;
     };
