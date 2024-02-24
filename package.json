@@ -53,7 +53,10 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
-    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix"
+    "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
+    "patch-publish": "npm run lint:ts:fix && npm run build && npm version patch && npm publish",
+    "minor-publish": "npm run lint:ts:fix && npm run build && npm version minor && npm publish",
+    "major-publish": "npm run lint:ts:fix && npm run build && npm version major && npm publish"
   },
   "devDependencies": {
     "@types/node": "^20.10.2",
