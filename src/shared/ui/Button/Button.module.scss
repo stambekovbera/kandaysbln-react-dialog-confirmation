@@ -1,0 +1,15 @@
+.button {
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: all 0.2s linear;
+
+    @media (max-width: 640px) {
+        padding: 10px 10px;
+    }
+}
+
+.background {
+    border: none;
+    background-color: #000;
+    color: #fff;
+}

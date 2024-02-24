@@ -35,6 +35,11 @@
   transition: transform var(--kandaysbln-duration) linear;
   max-width: 60%;
   margin: 0;
+
+  @media (max-width: 640px) {
+    padding: 10px;
+    border-radius: 5px;
+  }
 }
 
 .opened {

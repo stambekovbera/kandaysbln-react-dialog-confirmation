@@ -1,6 +1,7 @@
 import classes from './DialogConfirmationModal.module.scss';
 import cn from 'classnames';
 import React from 'react';
+import { Button } from '@/shared/ui/Button/Button';
 import { Modal } from '@/shared/ui/Modal/Modal.tsx';
 import { useDialogConfirmation } from '@/app/providers/DialogConfirmationProvider';
 
@@ -57,18 +58,18 @@ const DialogConfirmationModalComponent: React.FC<IDialogConfirmationModalProps> 
                     </p>
                 </div>
                 <div className={ classes.confirmActions }>
-                    <button
+                    <Button
                         className={ classes.confirmButton }
                         onClick={ handleCloseEvent }
                     >
                         { cancelButtonText }
-                    </button>
-                    <button
+                    </Button>
+                    <Button
                         className={ classes.confirmButton }
                         onClick={ handleAcceptEvent }
                     >
                         { acceptButtonText }
-                    </button>
+                    </Button>
                 </div>
             </div>
         </Modal>
