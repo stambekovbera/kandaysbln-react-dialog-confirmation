@@ -59,13 +59,13 @@ const DialogConfirmationModalComponent: React.FC<IDialogConfirmationModalProps> 
                 </div>
                 <div className={ classes.confirmActions }>
                     <Button
-                        className={ classes.confirmButton }
+                        className={ cn(classes.confirmButton, {}, [classes.cancelButton]) }
                         onClick={ handleCloseEvent }
                     >
                         { cancelButtonText }
                     </Button>
                     <Button
-                        className={ classes.confirmButton }
+                        className={ cn(classes.confirmButton, {}, [classes.acceptButton]) }
                         onClick={ handleAcceptEvent }
                     >
                         { acceptButtonText }

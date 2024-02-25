@@ -61,6 +61,16 @@
   font-size: 14px;
   border-radius: 5px;
 
+  &.cancel-button {
+    background-color: var(--kandaysbln-cancel-button-background-color);
+    color: var(--kandaysbln-cancel-button-text-color);
+  }
+
+  &.accept-button {
+    background-color: var(--kandaysbln-accept-button-background-color);
+    color: var(--kandaysbln-accept-button-text-color);
+  }
+
   @media (max-width: 640px) {
     font-size: 12px;
   }
