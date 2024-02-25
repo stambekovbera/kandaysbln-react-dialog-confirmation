@@ -199,3 +199,16 @@ function App() {
 
 export default App
 ```
+
+# CSS variables
+
+|Variable|Description|Default value|
+| ------------ | ------------ | ------------ |
+|--kandaysbln-modal-z-index|Element stack order|1000|
+|--kandaysbln-modal-content-bg|Content background color|#FFF|
+|--kandaysbln-overlay-bg|Overlay background color|rgb(0 0 0 / 70%)|
+|--kandaysbln-duration|Animation duration|200ms|
+|--kandaysbln-cancel-button-background-color|Cancel button background color|#000|
+|--kandaysbln-cancel-button-text-color|Cancel button text color|#FFF|
+|--kandaysbln-accept-button-background-color|Accept button background color|#000|
+|--kandaysbln-accept-button-text-color|Accept button text color|#FFF|

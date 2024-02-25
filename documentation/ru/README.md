@@ -198,3 +198,16 @@ function App() {
 
 export default App
 ```
+
+# CSS переменные
+
+|Переменная|Описание|Значение по умолчанию|
+| ------------ | ------------ | ------------ |
+|--kandaysbln-modal-z-index|Порядок стека элемента|1000|
+|--kandaysbln-modal-content-bg|Цвет фона контента|#FFF|
+|--kandaysbln-overlay-bg|Цвет заднего фона|rgb(0 0 0 / 70%)|
+|--kandaysbln-duration|Продолжительность анимации|200ms|
+|--kandaysbln-cancel-button-background-color|Цвет фона кнопки отмены|#000|
+|--kandaysbln-cancel-button-text-color|Цвет текста кнопки отмены|#FFF|
+|--kandaysbln-accept-button-background-color|Цвет фона кнопки подтверждения|#000|
+|--kandaysbln-accept-button-text-color|Цвет текста кнопки подтвердждения|#FFF|
