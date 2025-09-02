@@ -30,12 +30,12 @@ export const DialogConfirmationProvider: React.FC<IDialogConfirmationProviderPro
     const [ params, setParams ] = React.useState<IDialogConfirmationProps>( initialState );
 
     const onOpenDialogConfirmation = React.useCallback( (values: Partial<IDialogConfirmationOnOpenProps>) => {
-        setParams( () => ( {
-            ...params,
+        setParams( (prev) => ( {
+            ...prev,
             ...values,
             isOpen: true,
         } ) );
-    }, [ params, setParams ] );
+    }, [] );
 
     const onCloseDialogConfirmation = React.useCallback( () => {
         if (timeout) {
@@ -43,15 +43,15 @@ export const DialogConfirmationProvider: React.FC<IDialogConfirmationProviderPro
             timeout = null;
         }
 
-        setParams( () => ( {
-            ...params,
+        setParams( (prev) => ( {
+            ...prev,
             isOpen: false,
         } ) );
 
         timeout = setTimeout( () => {
             setTimeout( () => initialState );
         }, 500 );
-    }, [ params, setParams ] );
+    }, [] );
 
     const providerValue = React.useMemo<IDialogConfirmationContext>( () => ( {
         params,
